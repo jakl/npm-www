@@ -16,7 +16,7 @@
       <p class="description"><%= package.description %></p>
     <% } %>
 
-    <pre class="sh"><code>npm install <%= package.name %></code></pre>
+    <pre class="sh"><code>npm install <% if (package.preferGlobal) return "-g "; %><%= package.name %></code></pre>
 
     <% if(dlDetail == 'point') { %>
       <span class="login-for-graphs">Want to see pretty graphs? <a href="/login?done=/package/<%= package.name %>">Log in now!</a></span>
